@@ -49,30 +49,17 @@ const Login = () => {
                         <label htmlFor="email" className="font-semibold">
                             Email
                         </label>
-                        <input
-                            id="email"
-                            className={inputClass}
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
+
+                        <input id="email" className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} requir />
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <label htmlFor="password" className="font-semibold">
                             Password
                         </label>
-                        <input
-                            id="password"
-                            className={inputClass}
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input id="password" className={inputClass} type="password"
+                            name="password" value={formData.password}onChange={handleChange}
+                            required/>
                     </div>
 
 
@@ -91,8 +78,7 @@ const Login = () => {
 
                     <button
                         type="submit"
-                        className="bg-green-400 text-white font-semibold py-2 rounded hover:bg-green-500 transition"
-                    >
+                        className="bg-green-400 text-white font-semibold py-2 rounded hover:bg-green-500 transition">
                         Login
                     </button>
                 </form>

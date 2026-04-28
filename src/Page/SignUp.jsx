@@ -49,15 +49,7 @@ const SignUp = () => {
             <label htmlFor="firstname" className="font-semibold">
               First Name
             </label>
-            <input
-              id="firstname"
-              className={inputClass}
-              type="text"
-              name="firstname"
-              value={formData.firstname}
-              onChange={handleChange}
-              required
-            />
+            <input id="firstname" className={inputClass} type="text" name="firstname" value={formData.firstname} onChange={handleChange} require />
           </div>
 
           <div className="flex flex-col gap-1">
@@ -79,30 +71,14 @@ const SignUp = () => {
             <label htmlFor="email" className="font-semibold">
               Email
             </label>
-            <input
-              id="email"
-              className={inputClass}
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+            <input id="email" className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} require />
           </div>
 
           <div className="flex flex-col gap-1">
             <label htmlFor="password" className="font-semibold">
               Password
             </label>
-            <input
-              id="password"
-              className={inputClass}
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
+            <input  id="password"  className={inputClass}  type="password"  name="password"  value={formData.password}  onChange={handleChange}  required />
           </div>
 
           <button

@@ -9,6 +9,9 @@ import WishList from './Page/WishList'
 import Shop from './Page/Shop'
 import Story from './Page/Story'
 import { ProductList } from "./Component/ProductList";
+import Footer from "./Component/Footer";
+import ContactUs from "./Page/ContactUs";
+
 
 
 export default function App() {
@@ -23,13 +26,17 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login/>} />
+            <Route path="/login" element={<Login />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/story" element={<Story />} />
+             <Route path="/contact" element={<ContactUs />} />
             <Route path="/Product/:id" element={<ProductList />} />
+
             <Route path="*" element={<div className="p-8 text-center">Not Exist Page - 404 </div>} />
           </Routes>
         </main>
+
+        < Footer />
       </div>
     </Router>
 

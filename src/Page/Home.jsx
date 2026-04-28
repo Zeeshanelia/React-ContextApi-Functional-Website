@@ -1,14 +1,15 @@
-import { ProductList } from "../Component/ProductList";
+import Header from "../Component/Header";
 
 const Home = () => {
-    
+
 
     return (
-        <section className="p-8 bg-gray-200 ">
-           
-            <h1 className="text-2xl font-bold mb-8 text-center"> Products</h1>
-            <ProductList/>
-           
+        <section className=" ">
+
+            <Header
+             />
+
+
         </section>
     );
 }
