@@ -1,6 +1,6 @@
 
 
-export const ProductCart = () => {
+export const SingleCard = () => {
 
 
   return (
@@ -11,11 +11,9 @@ export const ProductCart = () => {
 
       <div className="flex items-center justify-between">
         <p className="text-gray-600 mb-3">$ </p>
-        <button
 
-          className="px-3 py-1 bg-black text-white rounded-md text-sm hover:bg-gray-800"
-        >
-          Add to Cart
+        <button
+          className="px-3 py-1 bg-black text-white rounded-md text-sm hover:bg-gray-800">  Add to Cart
         </button>
       </div>
     </div>

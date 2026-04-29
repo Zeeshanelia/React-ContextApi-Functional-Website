@@ -51,9 +51,17 @@ const Navbar = () => {
         </Link>
 
 
-        <Link to="/cart">
-          <BsCart className="text-xl" />
-        </Link>
+        <Link to="/cart" className="relative inline-block">
+
+      {/* Cart Icon */}
+      <BsCart className="text-2xl" />
+
+      {/* Badge */}
+      <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+        0
+      </span>
+
+    </Link>
 
 
         <Link to="/login">
