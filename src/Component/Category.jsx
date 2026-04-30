@@ -1,13 +1,16 @@
-import { products } from "../assets/asset";
+import { useContext } from "react";
+import { AppStore } from "../context/AppStore ";
 
 const Category = () => {
+    const {products} = useContext(AppStore)
+
     return (
-        <section className="bg-gray-100 p-4 md:p-4">
+        <section className="bg-gray-100 p-4 md:p-8">
 
             <h1 className="text-xl md:text-3xl font-bold text-center">Shop By Category</h1>
 
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-4 gap-3 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-4 gap-6 mt-8">
 
                 {products.slice(0, 4).map((product) => (
 
