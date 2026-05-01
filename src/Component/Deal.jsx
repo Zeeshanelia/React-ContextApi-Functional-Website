@@ -3,7 +3,7 @@ import { assets } from "../assets/asset";
 
 const Deal = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-around gap-6 p-4">
+    <div className="flex flex-col md:flex-row items-center justify-around  p-4">
 
       {/* Left Content */}
       <div className="w-full md:w-1/2 flex flex-col items-center gap-3">
@@ -28,7 +28,7 @@ const Deal = () => {
         <img
           src={assets.slide1}
           alt="deal"
-          className="max-w-full h-auto object-contain"
+          className="max-w-full h-96 object-contain md:rounded-full md:p-6"
         />
       </div>
 

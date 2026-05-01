@@ -3,7 +3,8 @@ import login from "/images/login.webp";
 import signup from "/images/signup.webp";
 import welcome from "/images/welcome.png";
 import logo from "/images/logo.png";
-import stars from "/images/stars.jpg";
+import stars from "/images/stars.png";
+import stars2 from "/images/stars.png";
 
 // Slides
 import slide1 from "/images/slide1.png";
@@ -11,6 +12,8 @@ import slide2 from "/images/slide2.png";
 import slide3 from "/images/slide3.png";
 import slide4 from "/images/slide4.png";
 import slide5 from "/images/slide5.png";
+import slide6 from "/images/slide6.png";
+import slide7 from "/images/slide7.png";
 
 // Products / stories
 import story1 from "/images/story1.png";
@@ -38,6 +41,9 @@ export const assets = {
   slide3,
   slide4,
   slide5,
+  slide6,
+  slide7,
+
   story1,
   p1,
   p2,
@@ -188,16 +194,28 @@ export const products = [
     offerPrice: 1799,
     image: p4,
   },
+  {
+    id: 21,
+    name: "Hooded Sweatshirt",
+    smallDesc: "Warm and cozy hoodie.",
+    category: "Girls Winterwear",
+    oldPrice: 1999,
+    offerPrice: 1499,
+    image: slide6,
+  },
+  {
+    id: 22,
+    name: "Printed Kurti",
+    smallDesc: "Traditional printed kurti.",
+    category: "Girls Ethnic",
+    oldPrice: 1599,
+    offerPrice: 1199,
+    image: slide7,
+  },
 ];
 
 export const testimonials = [
-  {
-    image: p1,
-    name: "Ayesha Khan",
-    stars: stars,
-    review:
-      "Excellent service! I'm very satisfied with the quality and the team was super helpful.",
-  },
+
   {
     image: p2,
     name: "Rahul Sharma",

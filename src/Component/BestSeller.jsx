@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppStore } from "../context/AppStore ";
-import SingleCard from "../Page/SingleCard";
+import SingleCard from "./SingleCard";
 
 
 const BestSeller = () => {
@@ -11,14 +11,14 @@ const BestSeller = () => {
         <h1 className="text-xl md:text-3xl font-bold text-center">
             Our Best Sellers </h1>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-8 px-4 md:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mt-8 px-4 md:px-8">
 
             {
                 products?.length === 0 ? (
                     <p className="text-center mt-6">No products found</p>
                 ) : (
 
-                    products.slice(0, 8).map((product) => (
+                    products.slice(0, 10).map((product) => (
                         <SingleCard
 
                             id={product.id}

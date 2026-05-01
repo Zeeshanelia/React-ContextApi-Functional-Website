@@ -6,11 +6,7 @@ const SingleCard = ({ id, name, image, category, oldPrice, offerPrice }) => {
 
       {/* Image */}
       <Link to={`/product/${id}`} className="overflow-hidden rounded-lg">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-36 object-cover hover:scale-105 transition duration-300"
-        />
+        <img src={image} alt={name} className="w-full h-36 object-contain hover:scale-105 transition duration-300"/>
       </Link>
 
       {/* Info */}
@@ -21,12 +17,8 @@ const SingleCard = ({ id, name, image, category, oldPrice, offerPrice }) => {
 
       {/* Price */}
       <div className="flex items-center gap-2 mt-2">
-        <p className="text-base font-bold text-green-600">
-          ${offerPrice}
-        </p>
-        <p className="text-xs line-through text-gray-400">
-          ${oldPrice}
-        </p>
+        <p className="text-base font-bold text-green-600"> ${offerPrice} </p>
+        <p className="text-xs line-through text-gray-400"> ${oldPrice} </p>
       </div>
 
       {/* Buttons */}
