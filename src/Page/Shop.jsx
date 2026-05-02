@@ -1,37 +1,48 @@
 import { useContext } from "react";
-import { AppStore } from "../context/AppStore ";
+import { AppStore } from "../context/AppStore";
 import SingleCard from "../Component/SingleCard";
 
 const Shop = () => {
-  const { products } = useContext(AppStore);
+  const { products = [] } = useContext(AppStore);
 
   return (
-    <div className="my-12">
-      <h1 className="text-4xl font-semibold text-gray-900">All Products</h1>
-      <p className="text-gray-900">
-        Below are the products available in our store
-      </p>
+    <div className="max-w-7xl mx-auto px-4 py-10">
 
-      {/* Display the products grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
-         {
-                products?.length === 0 ? (
-                    <p className="text-center mt-6">No products found</p>
-                ) : (
-
-                    products.slice(0, 10).map((product) => (
-                        <SingleCard
-
-                            id={product.id}
-                            name={product.name}
-                            image={product.image}
-                            category={product.category}
-                            oldPrice={product.oldPrice}
-                            offerPrice={product.offerPrice}
-                        />
-
-                    )))}
+      {/* HEADER */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-bold text-gray-900">
+          All Products
+        </h1>
+        <p className="text-gray-500 mt-2">
+          Discover premium products curated for you
+        </p>
       </div>
+
+      {/* EMPTY STATE */}
+      {products.length === 0 ? (
+        <div className="text-center text-gray-500 mt-10">
+          No products found
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+          {products
+            .filter((p) => p && p.id !== undefined)
+            .map((product) => (
+              <SingleCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                image={product.image}
+                category={product.category}
+                oldPrice={product.oldPrice}
+                offerPrice={product.offerPrice}
+              />
+            ))}
+
+        </div>
+      )}
+
     </div>
   );
 };

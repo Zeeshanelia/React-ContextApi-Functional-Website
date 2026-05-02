@@ -8,10 +8,10 @@ import SignUp from './Page/SignUp'
 import WishList from './Page/WishList'
 import Shop from './Page/Shop'
 import Story from './Page/Story'
-import { ProductList } from "./Component/ProductList";
+import SingleProduct from "./Page/SingleProduct";
 import Footer from "./Component/Footer";
 import ContactUs from "./Page/ContactUs";
-
+  import { ToastContainer } from 'react-toastify';
 
 
 export default function App() {
@@ -29,14 +29,16 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/story" element={<Story />} />
-             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/Product/:id" element={<ProductList />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/Product/:id" element={<SingleProduct
+            />} />
 
             <Route path="*" element={<div className="p-8 text-center">Not Exist Page - 404 </div>} />
           </Routes>
         </main>
 
         < Footer />
+        <ToastContainer />
       </div>
     </Router>
 

@@ -3,11 +3,14 @@ import image from "/images/logo.png";
 import { FaHome, FaShopify, FaPhoneAlt, FaHistory } from "react-icons/fa";
 import { GrFavorite, GrLogin } from "react-icons/gr";
 import { BsCart } from "react-icons/bs";
+import { useContext } from "react";
+import { AppStore } from "../context/AppStore";
 
 
 const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const { cart } = useContext(AppStore)
 
   const navLinks = [
     { name: "Home", path: "/", icon: <FaHome /> },
@@ -42,7 +45,6 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-
       </ul>
 
       <div className="flex items-center justify-between gap-3">
@@ -50,18 +52,14 @@ const Navbar = () => {
           <GrFavorite className="text-xl " />
         </Link>
 
-
+          {/* Cart Icon & Badge */}
         <Link to="/cart" className="relative inline-block">
+          <BsCart className="text-2xl" />
+          <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+            { cart ? cart.length : 0 }
+          </span>
 
-      {/* Cart Icon */}
-      <BsCart className="text-2xl" />
-
-      {/* Badge */}
-      <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
-        0
-      </span>
-
-    </Link>
+        </Link>
 
 
         <Link to="/login">

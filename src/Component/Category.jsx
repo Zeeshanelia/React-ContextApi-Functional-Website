@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { AppStore } from "../context/AppStore ";
+import { AppStore } from "../context/AppStore";
 
 const Category = () => {
     const {products} = useContext(AppStore)
 
     return (
         <section className="bg-gray-100 p-4 md:p-8">
-
             <h1 className="text-xl md:text-3xl font-bold text-center">Shop By Category</h1>
 
 
@@ -32,13 +31,10 @@ const Category = () => {
                         <div className="p-3 text-center">
                             <p className="text-sm md:text-base font-semibold text-gray-800 line-clamp-2"> {product.name} </p>
                         </div>
-
                     </div>
-
                 ))}
 
             </div>
-
         </section>
     );
 };
