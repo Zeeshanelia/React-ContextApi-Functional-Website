@@ -2,26 +2,28 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppStore } from "../context/AppStore";
 
-const SingleCard = ({id, name, image, category, oldPrice, offerPrice,}) => {
+const SingleCard = ({ id, name, image, category, oldPrice, offerPrice }) => {
   const { addToCart } = useContext(AppStore);
 
+  //  define safeId
+  const safeId = id;
 
+  //  use props directly, NOT product.x
   const handleAddToCart = () => {
-    addToCart({
-      id: Number(id),
-      name,
-      image,
-      category,
-      oldPrice,
-      offerPrice,
-    });
+    addToCart({ id, name, image, category, oldPrice, offerPrice });
   };
+
+  // guard works now because safeId is defined
+  if (!safeId) {
+    console.error("Invalid ID:", id);
+    return null;
+  }
 
   return (
     <div className="w-full max-w-[220px] bg-white border rounded-xl shadow-sm hover:shadow-md transition p-2 flex flex-col">
 
       {/* IMAGE */}
-      <Link to={`/product/${Number(id)}`}>
+      <Link to={`/product/${safeId}`}>
         <img
           src={image}
           alt={name}
@@ -54,6 +56,7 @@ const SingleCard = ({id, name, image, category, oldPrice, offerPrice,}) => {
           Add to Wish
         </button>
       </div>
+
     </div>
   );
 };

@@ -6,16 +6,12 @@ export const AppStore = createContext(null);
 
 export const AppsStoreProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [favorite] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
-
-
-  //  CART
-
+  // CART
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item.id === product.id);
-
       if (existing) {
         toast.info("Quantity increased");
         return prevCart.map((item) =>
@@ -24,45 +20,46 @@ export const AppsStoreProvider = ({ children }) => {
             : item
         );
       }
-
       toast.success("Product added to cart");
-
-      return [
-        ...prevCart,
-        {
-          ...product,
-          quantity: 1,
-          offerPrice: Number(product.offerPrice) || 0,
-        },
-      ];
+      return [...prevCart, { ...product, quantity: 1, offerPrice: Number(product.offerPrice) || 0 }];
     });
   };
 
   const removeItem = (productId) => {
     setCart((prev) => {
-      const updated = prev.filter((item) => item.id !== productId);
       toast.error("Removed from cart");
-      return updated;
+      return prev.filter((item) => item.id !== productId);
     });
   };
 
   // TOTAL
-
   const totalPrice = cart.reduce((total, item) => {
     return total + (Number(item.offerPrice) || 0) * (item.quantity || 0);
   }, 0);
 
+  // FAVORITES
+  const addToFavorite = (product) => {
+    setFavorites((prev) => {
+      const exists = prev.find((item) => item.id === product.id);
+      if (exists) {
+        toast.error("Removed from favorites", { position: "top-center" });
+        return prev.filter((item) => item.id !== product.id);
+      } else {
+        toast.success("Added to favorites", { position: "top-center" });
+        return [...prev, product];
+      }
+    });
+  };
 
-
-  //  PROVIDER
-
+  // PROVIDER
   const val = {
     products: initialProducts || [],
     cart,
-    favorite,
+    favorites,
     addToCart,
     removeItem,
     totalPrice,
+    addToFavorite,
   };
 
   return (
