@@ -10,7 +10,7 @@ import { AppStore } from "../context/AppStore";
 const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const { cart } = useContext(AppStore)
+  const { cart, favorites } = useContext(AppStore)
 
   const navLinks = [
     { name: "Home", path: "/", icon: <FaHome /> },
@@ -49,14 +49,15 @@ const Navbar = () => {
 
       <div className="flex items-center justify-between gap-3">
         <Link to="/wishlist">
-          <GrFavorite className="text-xl " />
+          <GrFavorite className={`text-xl w-6 h-6 cursor-pointer transition ${ favorites.length >0 ? "text-red-500" : "text-gray-400"
+            }`} />
         </Link>
 
-          {/* Cart Icon & Badge */}
+        {/* Cart Icon & Badge */}
         <Link to="/cart" className="relative inline-block">
           <BsCart className="text-2xl" />
           <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
-            { cart ? cart.length : 0 }
+            {cart ? cart.length : 0}
           </span>
 
         </Link>

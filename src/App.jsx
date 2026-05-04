@@ -11,7 +11,7 @@ import Story from './Page/Story'
 import SingleProduct from "./Page/SingleProduct";
 import Footer from "./Component/Footer";
 import ContactUs from "./Page/ContactUs";
-  import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 export default function App() {
@@ -30,8 +30,8 @@ export default function App() {
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/story" element={<Story />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/Product/:id" element={<SingleProduct
-            />} />
+            <Route path="/checkout" element={<CheckOut />} />
+            <Route path="/Product/:id" element={<SingleProduct/>} />
 
             <Route path="*" element={<div className="p-8 text-center">Not Exist Page - 404 </div>} />
           </Routes>
